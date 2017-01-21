@@ -1,0 +1,24 @@
+{
+  "name": "blog-engine",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A toolset to make a simple blog or cms.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zack Kollar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-nunjucks": "^2.1.2",
+    "grunt": "^1.0.1",
+    "grunt-sass": "^2.0.0",
+    "morgan": "^1.7.0",
+    "nunjucks": "^3.0.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nunjucks": "^0.1.4"
+  }
+}

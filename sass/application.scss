@@ -1,0 +1,17 @@
+// Import our basis styles for sanity and font rendering correctness.
+@import 'basis';
+
+body {
+  background: #111;
+}
+
+h2.title {
+  text-align: center;
+  color: #FDFDFD;
+  margin: 0 1em;
+  word-wrap: break-word;
+
+  opacity: 0;
+
+  @extend .vertical-center;
+}

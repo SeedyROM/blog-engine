@@ -107,7 +107,7 @@ var colno = null;
 var output = "";
 try {
 var frame = frame.push(true);
-output += "\n<h2 class=\"title\">\n  Hello ";
+output += "\n<h2 class=\"title hug\">\n  Hello ";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "appName"), env.opts.autoescape);
 output += "!\n</h2>\n";
 cb(null, output);

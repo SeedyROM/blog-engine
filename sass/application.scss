@@ -7,18 +7,20 @@
 
 body {
   background: #111;
+  text-align: center;
 }
 
 h2.title {
   text-align: center;
   color: #FDFDFD;
-  margin: 0 1em;
   word-wrap: break-word;
+  padding: 0.5em;
+  padding-bottom: 0.63em;
+  display: inline-block;
 
   // Javascript animation state.
   opacity: 0;
 
   // Center this puppy on the screen.
   @extend .vertical-center;
-  padding-bottom: 0.25em;
 }

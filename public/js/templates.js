@@ -107,9 +107,31 @@ var colno = null;
 var output = "";
 try {
 var frame = frame.push(true);
-output += "\n<h2 class=\"title hug\">\n  Hello ";
+output += "\n<h2 class=\"title hug\">\n  ";
+if(runtime.contextOrFrameLookup(context, frame, "appName")) {
+output += "\n    Hello ";
 output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "appName"), env.opts.autoescape);
-output += "!\n</h2>\n";
+output += "!\n  ";
+;
+}
+else {
+output += "\n    ";
+output += runtime.suppressValue(runtime.contextOrFrameLookup(context, frame, "content"), env.opts.autoescape);
+output += "\n  ";
+;
+}
+output += "\n  ";
+if(runtime.contextOrFrameLookup(context, frame, "user")) {
+output += "\n    <div class=\"username\">Signed in as ";
+output += runtime.suppressValue(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "user")),"username"), env.opts.autoescape);
+output += "</div>\n    <div class=\"logout\">\n      <a style=\"color: #AAA;\" href=\"/logout\">Logout</a>\n    </div>\n  ";
+;
+}
+else {
+output += "\n  <div class=\"login\">\n    <a style=\"color: #AAA;\" href=\"/login\">Login</a>\n  </div>\n  ";
+;
+}
+output += "\n</h2>\n";
 cb(null, output);
 ;
 } catch (e) {

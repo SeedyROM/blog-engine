@@ -1,5 +1,6 @@
 const sys = require('./sys')
 const mongoose = require('mongoose')
+mongoose.Promise = require('promise')
 mongoose.connect(`mongodb://${sys.hostname}/${sys.databaseName}`)
 
 const db = mongoose.connection

@@ -7,5 +7,15 @@
   {% else %}
     {{ content }}
   {% endif %}
+  {% if user %}
+    <div class="username">Signed in as {{ user.username }}</div>
+    <div class="logout">
+      <a style="color: #AAA;" href="/logout">Logout</a>
+    </div>
+  {% else %}
+  <div class="login">
+    <a style="color: #AAA;" href="/login">Login</a>
+  </div>
+  {% endif %}
 </h2>
 {% endblock %}

@@ -1,5 +1,6 @@
 const express = require('./express')
-const passport = require('passport')
+const passport = require('./passport')
+const User = require(rootDir + '/models/user')
 
 // Default index
 express.app.get('/', (req, res) => {
@@ -8,7 +9,8 @@ express.app.get('/', (req, res) => {
       var fs = require('fs')
       var json = JSON.parse(fs.readFileSync('package.json', 'utf8'))
       return json.name
-    })()
+    })(),
+    user: req.user,
   })
 })
 
@@ -28,12 +30,6 @@ express.app.get('/logout',
   (req, res) => {
     req.logout()
     res.redirect('/')
-  }
-)
-express.app.get('/profile',
-  require('connect-ensure-login').ensureLoggedIn(),
-  (req, res) => {
-    res.render('profile', { user: req.user })
   }
 )
 

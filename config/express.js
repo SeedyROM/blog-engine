@@ -4,6 +4,7 @@ const express = require('express')
 const expressNunjucks = require('express-nunjucks')
 const app = express()
 app.use(sys.logger('dev'))
+app.use(require('body-parser').urlencoded({ extended: true }))
 
 // Static server and template config
 const serveStaticHTML = false

@@ -1,8 +1,9 @@
 // Express config
+const sys = require('./sys')
 const express = require('express')
 const expressNunjucks = require('express-nunjucks')
 const app = express()
-const sys = require('./sys')
+app.use(sys.logger('dev'))
 
 // Static server and template config
 const serveStaticHTML = false
@@ -11,13 +12,15 @@ const useTemplates = true
 const templatesLocation = 'templates'
 const isDev = app.get('env') === 'development'
 
-app.use(sys.logger('dev'))
+// Content locations
 app.use('/js', express.static('public/js'))
 app.use('/stylesheets', express.static('public/stylesheets'))
+app.use('/favicon.ico', express.static('public/favicon.ico'))
 if(serveStaticHTML) app.use(express.static(staticHTMLLocation))
-if(useTemplates) app.set('views', process.cwd() +'/'+ templatesLocation)
+if(useTemplates) app.set('views', rootDir +'/'+ templatesLocation)
 expressNunjucks(app, { watch: isDev, noCache: isDev })
 
+// Listen shortcut
 const listen = () => {
   app.listen(sys.port, () => {
     console.log(`Server started at ${sys.hostname}:${sys.port}...`.info)

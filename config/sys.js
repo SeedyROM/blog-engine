@@ -6,6 +6,7 @@ const logger = require('morgan')
 const hostname = 'localhost'
 const databaseName = 'test'
 const port = 3000
+global.rootDir = process.cwd()
 
 colors.setTheme({
   silly: 'rainbow', input: 'grey', verbose: 'cyan',

@@ -2,7 +2,9 @@
 require('./config/sys')
 require('./config/mongoose')
 require('./config/defaultRoutes')
+require('./config/passport')
 
-// Import our the express config and listen for incoming connections
+// Import the express config and listen for incoming connections
 const express = require('./config/express')
+
 express.listen()

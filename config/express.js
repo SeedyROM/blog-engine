@@ -8,14 +8,14 @@ const sys = require('./sys')
 const serveStaticHTML = false
 const staticHTMLLocation = 'public/html'
 const useTemplates = true
-const templatesLocation = '/templates'
+const templatesLocation = 'templates'
 const isDev = app.get('env') === 'development'
 
 app.use(sys.logger('dev'))
 app.use('/js', express.static('public/js'))
 app.use('/stylesheets', express.static('public/stylesheets'))
 if(serveStaticHTML) app.use(express.static(staticHTMLLocation))
-if(useTemplates) app.set('views', __dirname + templatesLocation)
+if(useTemplates) app.set('views', process.cwd() +'/'+ templatesLocation)
 expressNunjucks(app, { watch: isDev, noCache: isDev })
 
 const listen = () => {

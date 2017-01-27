@@ -5,7 +5,7 @@ $(document).ready(function() {
 		.velocity(
 			{
 				opacity: [1, 'ease'],
-				fontSize: [parseInt($('.title').css('font-size')) + 10, 'spring']
+				fontSize: [parseInt($('.title').css('font-size')) + 10, 'spring'],
 			},
 			{
 				delay: 500,

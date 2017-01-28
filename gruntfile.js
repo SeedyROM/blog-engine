@@ -15,15 +15,15 @@ module.exports = function(grunt) {
     },
     nunjucks: {
         precompile: {
-            baseDir: 'templates/',
-            src: 'templates/*',
+            baseDir: 'views/templates/',
+            src: 'views/templates/*',
             dest: 'public/js/templates.js'
         }
     },
     watch: {
       source: {
-        files: ['sass/**/*.scss', 'templates/**/*.html'],
-        tasks: ['sass', 'nunjucks']
+        files: ['views/sass/**/*.scss', 'templates/**/*.html'],
+        tasks: ['views/sass', 'nunjucks']
       }
     }
   });

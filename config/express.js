@@ -10,7 +10,7 @@ app.use(require('body-parser').urlencoded({ extended: true }))
 const serveStaticHTML = false
 const staticHTMLLocation = 'public/html'
 const useTemplates = true
-const templatesLocation = 'templates'
+const templatesLocation = 'views/templates'
 const isDev = app.get('env') === 'development'
 
 // Content locations

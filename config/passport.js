@@ -3,7 +3,7 @@ const expressSession = require('express-session');
 const app = express.app
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require(rootDir + '/models/user');
+const User = require(rootDir + '/lib/models/user');
 
 app.use(expressSession({
   secret: 'mySecretKey',

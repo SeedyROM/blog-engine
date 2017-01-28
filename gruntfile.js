@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     watch: {
       source: {
         files: ['views/sass/**/*.scss', 'templates/**/*.html'],
-        tasks: ['views/sass', 'nunjucks']
+        tasks: ['sass', 'nunjucks']
       }
     }
   });

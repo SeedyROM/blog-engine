@@ -10,7 +10,7 @@ var processArguments = () => {
     const readline = require('readline-sync')
 
     // Models to import
-    const User = require(rootDir + '/models/user')
+    const User = require(rootDir + '/lib/models/user')
 
     var generateOption = (grab('--generate') || grab('-g'))
     var removeOption = (grab('--remove') || grab('-r'))

@@ -1,58 +1,71 @@
-@import 'reset';
+@import "reset",
+        "//fonts.googleapis.com/css?family=Lato|Open+Sans|Abril+Fatface|Archivo+Black|Raleway|Space+Mono|Unica+One";
+
+$baseFontSize   : 22;
+$baseLineHeight : 1.55;
+$leading        : $baseLineHeight * 0.75rem;
+$scale          : 1.414;
 
 /* Font imports... */
-@import url('//fonts.googleapis.com/css?family=Lato|Open+Sans|Abril+Fatface|Archivo+Black|Raleway|Space+Mono|Unica+One');
 
 /*! Typebase.scss v0.1.0 | MIT License */
 
 // Typesetting variables. Edit these!
-$baseFontSize: 22; // in pixels. This would result in 22px on desktop
-$baseLineHeight: 1.55; // how large the line height is as a multiple of font size
-$leading: $baseLineHeight * 0.75rem;
+
+// in pixels. This would result in 22px on desktop
+
+// how large the line height is as a multiple of font size
+
 // Rate of growth for headings
+
 // I actually like this to be slightly smaller then the leading. Makes for tight headings.
-$scale: 1.414;
 
 /* Setup */
 
 html {
     /* Change default typefaces here */
-    font-family: 'Space Mono', serif;
-    font-size: $baseFontSize / 16 * 100%;
+    -moz-text-size-adjust    : auto;
+    -ms-text-size-adjust     : auto;
+    -o-text-size-adjust      : auto;
+    -webkit-text-size-adjust : auto;
+    text-size-adjust         : auto;
+    font-family              : 'Space Mono',
+                               serif;
+    font-size                : $baseFontSize / 16 * 100%;
+    -webkit-font-smoothing   : antialiased;
     // Make everything look a little nicer in webkit
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: auto;
-    -moz-text-size-adjust: auto;
-    -ms-text-size-adjust: auto;
-    -o-text-size-adjust: auto;
-    text-size-adjust: auto;
-
 }
+
 /* Copy & Lists */
 
 p {
-    line-height: $leading;
-    margin-top: $leading;
-    margin-bottom: 0;
+    margin-top    : $leading;
+    margin-bottom : 0;
+    line-height   : $leading;
 }
-ul,
-ol {
-    margin-top: $leading;
-    margin-bottom: $leading;
+
+ol,
+ul {
+    margin-top    : $leading;
+    margin-bottom : $leading;
+
     li {
-        line-height: $leading;
+        line-height : $leading;
     }
-    ul,
-    ol {
-        margin-top: 0;
-        margin-bottom: 0;
+
+    ol,
+    ul {
+        margin-top    : 0;
+        margin-bottom : 0;
     }
 }
+
 blockquote {
-    line-height: $leading;
-    margin-top: $leading;
-    margin-bottom: $leading;
+    margin-top    : $leading;
+    margin-bottom : $leading;
+    line-height   : $leading;
 }
+
 /* Headings */
 
 h1,
@@ -62,85 +75,99 @@ h4,
 h5,
 h6 {
     /* Change heading typefaces here */
-    font-family: "Space Mono", sans-serif;
-    font-weight: bold;
-    margin-top: $leading;
-    margin-bottom: 0;
-    line-height: $leading;
+    margin-top    : $leading;
+    margin-bottom : 0;
+    font-family   : "Space Mono",
+                    sans-serif;
+    font-weight   : bold;
+    line-height   : $leading;
 }
+
 h1 {
-    font-size: 3 * $scale * 1rem;
-    line-height: 3 * $leading;
-    margin-top: 2 * $leading;
+    margin-top  : 2 * $leading;
+    font-size   : 3 * $scale * 1rem;
+    line-height : 3 * $leading;
 }
+
 h2 {
-    font-size: 2 * $scale * 1rem;
-    line-height: 2 * $leading;
-    margin-top: 2 * $leading;
+    margin-top  : 2 * $leading;
+    font-size   : 2 * $scale * 1rem;
+    line-height : 2 * $leading;
 }
+
 h3 {
-    font-size: 1 * $scale * 1rem;
+    font-size : 1 * $scale * 1rem;
 }
+
 h4 {
-    font-size: $scale / 2 * 1rem;
+    font-size : $scale / 2 * 1rem;
 }
+
 h5 {
-    font-size: $scale / 3 * 1rem;
+    font-size : $scale / 3 * 1rem;
 }
+
 h6 {
-    font-size: $scale / 4 * 1rem;
+    font-size : $scale / 4 * 1rem;
 }
 
 /* Tables */
 
 table {
-    margin-top: $leading;
-    border-spacing: 0px;
-    border-collapse: collapse;
+    margin-top      : $leading;
+    border-collapse : collapse;
+    border-spacing  : 0px;
 }
+
 td,
 th {
-    padding: 0;
-    line-height: $baseLineHeight * $baseFontSize - 0px;
+    padding     : 0;
+    line-height : $baseLineHeight * $baseFontSize - 0px;
 }
+
 /* Code blocks */
 
 code {
     // Forces text to constrain to the line-height. Not ideal, but works.
-    vertical-align: bottom;
+    vertical-align : bottom;
 }
+
 /* Leading paragraph text */
 
 .lead {
-    font-size: $scale * 1rem;
+    font-size : $scale * 1rem;
 }
+
 /* Hug a the block above you */
 
 .hug {
-    margin-top: 0;
+    margin-top : 0;
 }
 
 /* Utility classes. */
 
 .vertical-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.horizontal-center {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.true-center {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    position  : relative;
+    top       : 50%;
+    transform : translateY(-50%);
 }
 
-html, body {
-    max-width: 100%;
-    height: 100%;
-    background-color: #FFF;
+.horizontal-center {
+    position  : relative;
+    left      : 50%;
+    transform : translateX(-50%);
+}
+
+.true-center {
+    position  : relative;
+    top       : 50%;
+    left      : 50%;
+    transform : translateX(-50%) translateY(-50%);
+}
+
+body,
+html {
+    max-width        : 100%;
+    height           : 100%;
+    background-color : #FFF;
 }

@@ -5,7 +5,7 @@ var colno = null;
 var output = "";
 try {
 var parentTemplate = null;
-output += "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n  <title>SeedyROM.io</title>\n  <link rel=\"stylesheet\" href=\"stylesheets/application.css\" />\n  ";
+output += "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n  <title>BLOG ENGINE 0.0.1</title>\n  <link rel=\"stylesheet\" href=\"stylesheets/application.css\" />\n  ";
 (parentTemplate ? function(e, c, f, r, cb) { cb(""); } : context.getBlock("stylesheets"))(env, context, frame, runtime, function(t_2,t_1) {
 if(t_2) { cb(t_2); return; }
 output += t_1;

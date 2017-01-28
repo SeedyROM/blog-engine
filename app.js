@@ -1,8 +1,10 @@
 // Load configuration files
 require('./config/sys')
 require('./config/mongoose')
-require('./config/defaultRoutes')
 require('./config/passport')
+
+// Load routes
+require('./lib/router')
 
 // Import the express config and listen for incoming connections
 const cli = require('./config/cli')

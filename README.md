@@ -12,9 +12,7 @@ A pet project to simplify development/deployment of static website and CMS style
 ## Get started!
 ####Run this command:
 
-`git clone --depth=1 --branch=master https://github.com/SeedyROM/blog-engine {NEW_PROJECT_NAME}`
-
-`rm -rf {NEW_PROJECT_NAME}/.git`
+`curl http://domain/path/to/script.sh | bash -s {NEW_PROJECT_NAME}`
 
 _*Where {NEW_PROJECT_NAME} is whatever you like!*_
 
@@ -34,7 +32,7 @@ _*Where {NEW_PROJECT_NAME} is whatever you like!*_
 
 `node app.js --generate administrator --username admin`
 
-This will then prompt you to set and confirm a password, which if successful will create a new 
+This will then prompt you to set and confirm a password, which if successful will create a new
 
 ## Removing an admin
 

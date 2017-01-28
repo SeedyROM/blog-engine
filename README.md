@@ -12,7 +12,9 @@ A pet project to simplify development/deployment of static website and CMS style
 ## Get started!
 ####Run this command:
 
-`curl https://raw.githubusercontent.com/SeedyROM/blog-engine/master/setup.sh | bash -s {NEW_PROJECT_NAME}`
+`git clone --depth=1 --branch=master https://github.com/SeedyROM/blog-engine {NEW_PROJECT_NAME}`
+
+ `rm -rf {NEW_PROJECT_NAME}/.git`
 
 _*Where {NEW_PROJECT_NAME} is whatever you like!*_
 

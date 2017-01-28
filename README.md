@@ -12,7 +12,7 @@ A pet project to simplify development/deployment of static website and CMS style
 ## Get started!
 ####Run this command:
 
-`curl http://domain/path/to/script.sh | bash -s {NEW_PROJECT_NAME}`
+`curl https://raw.githubusercontent.com/SeedyROM/blog-engine/master/setup.sh | bash -s {NEW_PROJECT_NAME}`
 
 _*Where {NEW_PROJECT_NAME} is whatever you like!*_
 

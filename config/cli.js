@@ -18,6 +18,10 @@ var processArguments = () => {
       switch(generateOption) {
         case 'administrator' || 'admin':
           var username = (grab('--username') || grab('-u'))
+          if(!username) {
+            console.log('The generate administrator command requires the -u or --username arguments to work!'.error)
+            process.exit(1)
+          }
 
           User.count({username: username}, (error, count) => {
             if(count > 0) {
@@ -52,6 +56,10 @@ var processArguments = () => {
       switch(removeOption) {
         case 'administrator' || 'admin':
           var username = (grab('--username') || grab('-u'))
+          if(!username) {
+            console.log('The generate administrator command requires the -u or --username arguments to work!'.error)
+            process.exit(1)
+          }
 
           User.count({username: username}, (error, count) => {
             if(count <= 0) {

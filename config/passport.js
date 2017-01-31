@@ -5,6 +5,7 @@ const app = express.app
 const passport = require('passport')
 
 const MongoDBStore = require('connect-mongodb-session')(expressSession)
+
 const LocalStrategy = require('passport-local').Strategy
 const User = require(rootDir + '/lib/models/user')
 
@@ -16,10 +17,12 @@ var mongoStore = new MongoDBStore({
 app.use(
   expressSession({
     secret: 'mySecretKey',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
+    store: mongoStore,
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+      maxAge: (1000 * 60 * 60 * 24 * 7), // 1 week
+      secure: false
     }
   })
 )
@@ -28,8 +31,12 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 passport.use(new LocalStrategy(User.authenticate()))
-
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+passport.isAuthenticated = (req, res, next) => {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
+}
 
 module.exports = passport

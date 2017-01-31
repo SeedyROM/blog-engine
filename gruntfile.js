@@ -10,7 +10,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'public/stylesheets/application.css': 'views/sass/application.scss'
+          'public/stylesheets/application.css': 'views/sass/application.scss',
+          'public/stylesheets/admin.css': 'views/sass/admin.scss'
         },
         options: {
           includePaths: [

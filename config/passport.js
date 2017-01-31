@@ -35,8 +35,8 @@ passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 passport.isAuthenticated = (req, res, next) => {
     if (req.isAuthenticated())
-        return next();
-    res.redirect('/');
+        return next()
+    res.status(404).render('index', { content: 404 })
 }
 
 module.exports = passport

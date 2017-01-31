@@ -1,8 +1,9 @@
 @import "reset",
         "//fonts.googleapis.com/css?family=Lato|Open+Sans|Abril+Fatface|Archivo+Black|Raleway|Space+Mono|Unica+One";
 
+$fontName       : 'Space Mono' !default;
 $baseFontSize   : 22;
-$baseLineHeight : 1.55;
+$baseLineHeight : 1.6;
 $leading        : $baseLineHeight * 0.75rem;
 $scale          : 1.414;
 
@@ -29,7 +30,7 @@ html {
     -o-text-size-adjust      : auto;
     -webkit-text-size-adjust : auto;
     text-size-adjust         : auto;
-    font-family              : 'Space Mono',
+    font-family              : $fontName,
                                serif;
     font-size                : $baseFontSize / 16 * 100%;
     -webkit-font-smoothing   : antialiased;
@@ -77,7 +78,7 @@ h6 {
     /* Change heading typefaces here */
     margin-top    : $leading;
     margin-bottom : 0;
-    font-family   : "Space Mono",
+    font-family   : $fontName,
                     sans-serif;
     font-weight   : bold;
     line-height   : $leading;

@@ -1,8 +1,136 @@
 // Use bourbon and neat for niceness.
-@import "bourbon",
-        "basis",
-        "neat";
+@import "bourbon";
+@import "neat";
+
+// Set our default font-face and import the basis.
+$fontName: "Lato";
+@import "basis";
+
+// Get some nice icons
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+
+$off-white: #f6f8f8;
+
+$padding: 15px;
+$navigation-border-color: rgba(0,0,0, 0.2);
 
 body {
-  color: #AAFFCC;
+  background: $off-white;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.dark {
+    color: $off-white;
+  }
+}
+
+div.container {
+  @include display(flex);
+  @include align-items(stretch);
+  @include flex-direction(row);
+
+  min-height: 100%;
+
+  div.navigation-container {
+    @include flex(1 1 auto);
+    // max-width: 320px;
+    border-right: 1px solid $navigation-border-color;
+    min-width: 265px;
+    max-width: 400px;
+
+    > * {
+      box-sizing: border-box;
+    }
+
+    nav.navigation {
+      width: calc(100% + 1px);
+
+      .title {
+        font-size: 14pt;
+        text-shadow: 0px 1px 0px rgba(255,255,255,0.6);
+        display: block;
+        width: 100%;
+        background: #DDD;
+        border-bottom: 1px solid $navigation-border-color;
+        padding: $padding;
+        border-right: 1px $navigation-border-color solid;
+        cursor: pointer;
+        position: relative;
+        @include transition(background 0.15s ease-in-out);
+
+        &:hover {
+          background: lighten(#DDD, 5%);
+        }
+
+        .icon {
+          position: absolute;
+          top: 7px;
+          right: 15px;
+          display: inline-block;
+          font-size: 31px;
+
+          &.indicator {
+            position: relative;
+            margin-right: $padding - 2px;
+            font-size: 18px;
+            top: 0;
+            left: 0;
+            @include transition(transform 0.15s ease-in-out);
+            &.turned {
+              @include transform(rotate(90deg));
+            }
+          }
+        }
+      }
+
+      .user-status {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid $navigation-border-color;
+        position: relative;
+
+        font-size: 12px;
+        text-shadow: none;
+        color: $off-white;
+        background: #444;
+        border-right:1px #444 solid;
+        padding: ($padding * 0.66) $padding;
+        cursor: default;
+
+        .sign-out {
+          float: right;
+          display: inline-block;
+        }
+      }
+
+      .items {
+        ul {
+          list-style: none;
+          margin: 0px;
+          & > li {
+            font-size: 10pt;
+            padding: $padding * 0.5 $padding;
+            border-bottom: 1px solid $navigation-border-color;
+            text-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  div.content-container {
+    @include flex(3 1 auto);
+
+    section.content {
+      color: #222;
+      padding: $padding * 2;
+    }
+  }
 }

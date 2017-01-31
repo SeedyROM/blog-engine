@@ -3,14 +3,14 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>BLOG ENGINE 0.0.1</title>
-  <link rel="stylesheet" href="stylesheets/admin.css" />
-  {% block stylesheets %}{% endblock %}
-</head>
-<body>
-  {% block content %}{% endblock %}
+  <link rel="stylesheet" href="/stylesheets/admin.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
-  <script src="js/application.js"></script>
+  <script src="/js/admin.js"></script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+  {% block adminPanel %}{% endblock %}
   {% block scripts %}{% endblock %}
 </body>
 </html>

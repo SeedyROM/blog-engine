@@ -1,0 +1,34 @@
+{% extends "admin/body.html" %}
+{% block adminPanel %}
+  <div class="container">
+    <div class="navigation-container">
+      <nav class="navigation">
+        <div class="user-status items">
+          Signed in as {{ user.username }}...
+          <a href="/logout" class="sign-out dark">Sign Out</a>
+        </div>
+        <div class="items">
+          <span class="title">Blog<i class="icon ion-ios-bookmarks-outline"></i></span>
+          <ul>
+            <li><a href="#">Posts</a></li>
+            <li><a href="#">Pages</a></li>
+          </ul>
+        </div>
+        <div class="items">
+          <span class="title">Users<i class="icon ion-ios-people-outline"></i></span>
+        </div>
+        <div class="items">
+          <span class="title">Toolbox<i class="icon ion-ios-toggle-outline"></i></span>
+        </div>
+        <div class="items">
+          <span class="title">Settings<i class="icon ion-ios-gear-outline"></i></span>
+        </div>
+      </nav>
+    </div>
+    <div class="content-container">
+      <section class="content">
+        {% block content %}{% endblock %}
+      </section>
+    </div>
+  </div>
+{% endblock %}

@@ -1,5 +1,32 @@
-{% extends "admin/main.html" %}\
+{% extends "admin/main.html" %}
+{% block head %}
+  <style>
+  .loading {
+    margin-top: 30px;
+    display: inline-block;
+    font-size: 80px;
+    padding-bottom: 2px;
+  }
+  </style>
+{% endblock %}
 {% block content %}
-  <h2 class="hug">Welcome to blog-engine!</h2>
-  <h4 style="margin-top: 0.5rem;"><i>Version 0.0.1</i></h4>
+  <center>
+    <p>
+      This is still in development, and doesn't work. Watch the pretty thing in the mean time...
+    </p>
+    <i class="loading icon ion-ios-ionic-outline"></i>
+  </center>
+{% endblock %}
+{% block scripts %}
+  <script>
+    $('.loading').velocity({
+      scale: 1.25,
+      rotateZ: "360deg",
+    },
+    {
+      loop: true,
+      duration: 1500,
+      easing: "linear"
+    });
+  </script>
 {% endblock %}

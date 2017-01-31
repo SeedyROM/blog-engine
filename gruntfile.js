@@ -1,5 +1,12 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    express: {
+      dev: {
+        options: {
+          script: 'app.js'
+        }
+      }
+    },
     sass: {
       dist: {
         files: {
@@ -21,15 +28,27 @@ module.exports = function(grunt) {
         }
     },
     watch: {
+      express: {
+        files:  ['**/*.js', '!public/**/*.js'],
+        tasks:  ['express:dev'],
+        options: {
+          spawn: false
+        }
+      },
       source: {
         files: ['views/sass/**/*.scss', 'templates/**/*.html'],
         tasks: ['sass', 'nunjucks']
+      },
+      public: {
+        files: ['public/html/**/*.*']
       }
     }
   });
 
+  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-nunjucks');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('server', [ 'express:dev', 'watch' ])
 };

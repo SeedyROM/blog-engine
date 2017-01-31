@@ -10,7 +10,7 @@ db.on('error', (error) => {
   process.exit(1);
 })
 db.once('open', () => {
-  console.log('Connected to MongoDB...'.input)
+  //console.log('Connected to MongoDB...'.input)
 })
 
 module.exports = {

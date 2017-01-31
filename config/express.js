@@ -24,7 +24,7 @@ expressNunjucks(app, { watch: isDev, noCache: isDev })
 // Listen shortcut
 const listen = () => {
   app.listen(sys.port, () => {
-    console.log(`Server started at ${sys.hostname}:${sys.port}...`.info)
+    //console.log(`Server started at ${sys.hostname}:${sys.port}...`.info)
   })
 }
 

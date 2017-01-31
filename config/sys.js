@@ -25,8 +25,8 @@ module.exports = {
 
 // Gracefully handle exits
 const exitHandler = (code) => {
-  if(code != 0) console.log(`Server shut down with code: ${code}`.warn);
-  else console.log(`Server shut down with code: ${code}`.info);
+  if(code != 0) console.log(`Process shut down with code: ${code}`.warn);
+  else console.log(`Process shut down with code: ${code}`.info);
 }
 process.on('exit', exitHandler);
 process.on('SIGINT', () => { console.log(''); process.exit(0) })

@@ -46,6 +46,7 @@ div.container {
     max-width: 350px;
 
     > * {
+      @extend .no-select;
       box-sizing: border-box;
     }
 

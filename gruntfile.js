@@ -50,6 +50,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-nunjucks');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['sass', 'watch']);
-  grunt.registerTask('server', [ 'express:dev', 'watch' ])
+  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('server', [ 'express:dev', 'watch', 'sass' ])
 };

@@ -21,7 +21,7 @@ _*Where {NEW_PROJECT_NAME} is whatever you like!*_
 ######Make sure MongoDB is running or setup!
 
 ####Then run:
-`npm install && grunt && node app.js`
+`npm install; grunt server;`
 
 
 ## Adding an admin

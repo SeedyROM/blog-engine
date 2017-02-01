@@ -1,11 +1,16 @@
-{% extends "admin/main.html" %}\
+{% extends "admin/main.html" %}
 {% block head %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 {% endblock %}
 {% block scripts %}
   <script>
-  var simplemde = new SimpleMDE({ element: $("#editor")[0] });
+  var simplemde = new SimpleMDE(
+    {
+      element: $("#editor")[0],
+      spellChecker: false,
+    }
+  );
   </script>
 {% endblock %}
 {% block content %}

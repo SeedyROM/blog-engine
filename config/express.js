@@ -19,8 +19,10 @@ app.use('/stylesheets', express.static('public/stylesheets'))
 app.use('/favicon.ico', express.static('public/favicon.ico'))
 if(serveStaticHTML) app.use(express.static(staticHTMLLocation))
 if(useTemplates) app.set('views', rootDir +'/'+ templatesLocation)
-expressNunjucks(app, { watch: isDev, noCache: isDev })
 
+// Setup nunjucks
+const nunjucks = expressNunjucks(app, { watch: isDev, noCache: isDev })
+nunjucks.env.addFilter('date', require('nunjucks-date-filter'))
 // Listen shortcut
 const listen = () => {
   app.listen(sys.port, () => {

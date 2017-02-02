@@ -12,24 +12,29 @@
 {% endblock %}
 {% block content %}
 <h3 class="hug">Posts</h3>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Posted At</th>
-    {% if post.tags %}
-      <th>Tags</th>
-    {% endif %}
-  </tr>
-  {% for post in posts %}
-  <tr>
-    <td>{{ post.title }}</td>
-    <td>{{ post.body }}</td>
-    <td>{{ post.postedAt }}</td>
-    {% if post.tags %}
-      <td>{{ post.tags }}</td>
-    {% endif %}
-  </tr>
-  {% endfor %}
-</table>
+<p>
+  <a href="posts/new">New Post</a>
+</p>
+<p>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Posted At</th>
+      {% if post.tags %}
+        <th>Tags</th>
+      {% endif %}
+    </tr>
+    {% for post in posts %}
+    <tr>
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>
+      <td>{{ post.postedAt | date('MMMM Do YYYY, h:mm:ss a') }}</td>
+      {% if post.tags %}
+        <td>{{ post.tags }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</p>
 {% endblock %}

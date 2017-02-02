@@ -14,5 +14,18 @@
   </script>
 {% endblock %}
 {% block content %}
-<textarea id="editor"></textarea>
+<form action="/be-admin/posts/new" method="post" name="newPost">
+  <p class="hug">
+    <label>Title:</label>
+  </p>
+  <p>
+    <input type="text" name="title" />
+  </p>
+  <p>
+    <textarea id="editor" name="body"></textarea>
+  </p>
+  <p>
+    <input type="submit" value="Create Post" />
+  </p>
+</form>
 {% endblock %}

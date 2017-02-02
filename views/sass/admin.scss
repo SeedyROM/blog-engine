@@ -72,10 +72,10 @@ a {
 
         .icon {
           position: absolute;
-          top: 7px;
-          right: 15px;
+          top: $padding / 2;
+          right: $padding;
           display: inline-block;
-          font-size: 31px;
+          font-size: $padding * 2;
 
           &.indicator {
             position: relative;

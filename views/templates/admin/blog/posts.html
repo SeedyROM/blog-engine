@@ -13,10 +13,10 @@
 {% block content %}
 <h3 class="hug">Posts</h3>
 <p>
-  <a href="posts/new">New Post</a>
+  <a class="button" href="posts/new">New Post</a>
 </p>
+{% if posts | length %}
 <p>
-  {% if posts | length %}
   <table>
     <tr>
       <th>Title</th>
@@ -25,14 +25,14 @@
     </tr>
     {% for post in posts %}
     <tr>
-      <td><a href="posts/{{ post.slug }}">{{ post.title }}</a></td>
+      <td><a href="posts/view/{{ post.slug }}">{{ post.title }}</a></td>
       <td>{{ post.body | stripMarkdown }}</td>
       <td>{{ post.postedAt | date('MMMM Do YYYY, h:mm:ss a') }}</td>
     </tr>
     {% endfor %}
   </table>
-  {% else %}
-  <h4>No posts to show! Why not add one?</h4>
-  {% endif %}
 </p>
+{% else %}
+  <h4>No posts to show! Why not add one?</h4>
+{% endif %}
 {% endblock %}

@@ -135,4 +135,21 @@ a {
       padding-top: (($padding * 2) + ($padding / 3) - 1);
     }
   }
+
+  .button {
+    font-size: 12pt;
+    box-sizing: border-box;
+    background: #DDD;
+    padding: 7.5px 15px;
+    display: inline-block;
+    border-radius: 30px;
+    padding-bottom: 10px;
+
+    @include transition(background 0.15s ease-in-out);
+
+    &:hover {
+      background: #E8E8E8;
+      text-decoration: none;
+    }
+  }
 }

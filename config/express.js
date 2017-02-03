@@ -10,7 +10,7 @@ app.use(require('body-parser').urlencoded({ extended: true }))
 const serveStaticHTML = false
 const staticHTMLLocation = 'public/html'
 const useTemplates = true
-const templatesLocation = 'views/templates'
+const templatesLocation = '/views/templates'
 const isDev = app.get('env') === 'development'
 
 // Content locations
@@ -18,11 +18,15 @@ app.use('/js', express.static('public/js'))
 app.use('/stylesheets', express.static('public/stylesheets'))
 app.use('/favicon.ico', express.static('public/favicon.ico'))
 if(serveStaticHTML) app.use(express.static(staticHTMLLocation))
-if(useTemplates) app.set('views', rootDir +'/'+ templatesLocation)
+if(useTemplates) app.set('views', rootDir + templatesLocation)
 
 // Setup nunjucks
 const nunjucks = expressNunjucks(app, { watch: isDev, noCache: isDev })
 nunjucks.env.addFilter('date', require('nunjucks-date-filter'))
+nunjucks.env.addFilter('stripMarkdown', (body) => {
+  return require('remove-markdown')(body)
+})
+
 // Listen shortcut
 const listen = () => {
   app.listen(sys.port, () => {
@@ -36,6 +40,7 @@ module.exports = {
   staticHTMLLocation: staticHTMLLocation,
   useTemplates: useTemplates,
   templatesLocation: templatesLocation,
+  nunjucks: nunjucks,
   isDev: isDev,
   listen: listen
 }

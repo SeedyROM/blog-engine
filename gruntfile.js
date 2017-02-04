@@ -34,7 +34,6 @@ module.exports = function(grunt) {
       },
       express: {
         files:  [
-          'views/**/*',
           'lib/**/*.js',
           'config/**/*.js',
           'app.js',

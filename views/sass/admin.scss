@@ -1,89 +1,70 @@
-// Use bourbon and neat for niceness.
-@import "bourbon";
-@import "neat";
+// Load up our libs.
 
-// Set our default font-face and import the basis.
-$fontName: "Lato";
-@import "basis";
-
-// Get some nice icons
-@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
-
-$off-white: #f6f8f8;
-
-$padding: 15px;
-$navigation-border-color: rgba(0,0,0, 0.2);
+@import "admin_settings",
+        "bourbon",
+        "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css",
+        "basis",
+        "neat";
 
 body {
-  background: $off-white;
+  background : $off-white;
 }
 
-a {
-  color: #222;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &.dark {
-    color: $off-white;
-  }
-}
+// Main content / container styles.
 
 .container {
-  @include display(flex);
-  @include align-items(stretch);
-  @include flex-direction(row);
-
-  min-height: 100%;
+  @include     display(flex);
+  @include     align-items(stretch);
+  @include     flex-direction(row);
+  min-height : 100%;
 
   .navigation-container {
-    @include flex(1 1 100%);
+    @include       flex(1 1 100%);
+    min-width    : 250px;
+    max-width    : 350px;
+    border-right : 1px solid $navigation-border-color;
     // max-width: 320px;
-    border-right: 1px solid $navigation-border-color;
-    min-width: 250px;
-    max-width: 350px;
 
     > * {
-      @extend .no-select;
-      box-sizing: border-box;
+      @extend      .no-select;
+      box-sizing : border-box;
     }
 
     .navigation {
-      width: calc(100% + 1px);
+      width : calc(100% + 1px);
 
       .title {
-        font-size: 14pt;
-        text-shadow: 0px 1px 0px rgba(255,255,255,0.6);
-        display: block;
-        width: 100%;
-        background: #DDD;
-        border-bottom: 1px solid $navigation-border-color;
-        padding: $padding;
-        border-right: 1px $navigation-border-color solid;
-        cursor: pointer;
-        position: relative;
-        @include transition(background 0.15s ease-in-out);
+        @include        transition(background 0.15s ease-in-out);
+        display       : block;
+        position      : relative;
+        width         : 100%;
+        padding       : $padding;
+        border-right  : 1px $navigation-border-color solid;
+        border-bottom : 1px solid $navigation-border-color;
+        background    : #DDD;
+        text-shadow   : 0px 1px 0px rgba(255,255,255,0.6);
+        font-size     : 14pt;
+        cursor        : pointer;
 
         &:hover {
-          background: lighten(#DDD, 5%);
+          background : lighten(#DDD, 5%);
         }
 
         .icon {
-          position: absolute;
-          top: $padding / 2;
-          right: $padding;
-          display: inline-block;
-          font-size: $padding * 2;
+          display   : inline-block;
+          position  : absolute;
+          top       : $padding / 2;
+          right     : $padding;
+          font-size : $padding * 2;
 
           &.indicator {
-            position: relative;
-            margin-right: $padding - 2px;
-            font-size: 18px;
-            top: 0;
-            left: 0;
-            @include transition(transform 0.15s ease-in-out);
+            @include       transition(transform 0.15s ease-in-out);
+            position     : relative;
+            top          : 0;
+            left         : 0;
+            margin-right : $padding - 2px;
+            font-size    : 18px;
+
             &.turned {
               @include transform(rotate(90deg));
             }
@@ -92,34 +73,34 @@ a {
       }
 
       .user-status {
-        display: block;
-        width: 100%;
-        border-bottom: 1px solid $navigation-border-color;
-        position: relative;
-
-        font-size: 12px;
-        text-shadow: none;
-        color: $off-white;
-        background: #444;
-        border-right:1px #444 solid;
-        padding: ($padding * 0.66) $padding;
-        cursor: default;
+        display       : block;
+        position      : relative;
+        width         : 100%;
+        padding       : ($padding * 0.66) $padding;
+        color         : $off-white;
+        border-right  : 1px #444 solid;
+        border-bottom : 1px solid $navigation-border-color;
+        background    : #444;
+        text-shadow   : none;
+        font-size     : 12px;
+        cursor        : default;
 
         .sign-out {
-          float: right;
-          display: inline-block;
+          display : inline-block;
+          float   : right;
         }
       }
 
       .items {
         ul {
-          list-style: none;
-          margin: 0px;
+          margin     : 0px;
+          list-style : none;
+
           & > li {
-            font-size: 10pt;
-            padding: $padding * 0.5 $padding;
-            border-bottom: 1px solid $navigation-border-color;
-            text-shadow: none;
+            padding       : $padding * 0.5 $padding;
+            border-bottom : 1px solid $navigation-border-color;
+            text-shadow   : none;
+            font-size     : 10pt;
           }
         }
       }
@@ -127,34 +108,112 @@ a {
   }
 
   .content-container {
-    @include flex(3 1 auto);
+    @include   flex(3 1 auto);
 
     .content {
-      color: #222;
-      padding: $padding * 2;
-      padding-top: (($padding * 2) + ($padding / 3) - 1);
+      padding : $padding * 2;
+      color   : #222;
     }
   }
+}
 
-  .button {
-    font-size: 12pt;
-    box-sizing: border-box;
-    background: #DDD;
-    padding: 7.5px 15px;
-    display: inline-block;
-    border-radius: 30px;
-    padding-bottom: 10px;
-    border: none;
+a {
+  color           : #222;
+  text-decoration : none;
 
-    @include transition(background 0.15s ease-in-out);
+  &:hover {
+    text-decoration : underline;
+  }
 
-    &:hover {
-      background: #E8E8E8;
-      text-decoration: none;
+  &.dark {
+    color : $off-white;
+  }
+}
+
+.button {
+  @include         transition(background 0.15s ease-in-out);
+  display        : inline-block;
+  box-sizing     : border-box;
+  padding        : 7.5px 15px;
+  padding-bottom : 10px;
+  border         : none;
+  border-radius  : 30px;
+  background     : #DDD;
+  font-size      : 12pt;
+  cursor         : pointer;
+
+  &:hover {
+    background      : #E8E8E8;
+    text-decoration : none;
+  }
+}
+
+// Default interface styles.
+
+.input {
+  display     : inline-block;
+  padding     : $padding;
+  border      : 1px solid #CCC;
+  outline     : none;
+  box-shadow  : none;
+  font-family : $fontName;
+  font-size   : 25px;
+
+  &:active,
+  &:focus {
+    border  : 1px solid #343434;
+    outline : none;
+  }
+
+  &.stretch {
+    width : 100%;
+  }
+}
+
+.close-icon {
+  position      : relative;
+  width         : $padding;
+  height        : $padding;
+  padding       : $padding;
+  border-radius : $padding;
+
+  &.left {
+    float : left;
+  }
+}
+
+.markdown {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top    : 1rem !important;
+    margin-bottom : 1rem;
+
+    &:first-of-type {
+      margin-top : 0px;
     }
   }
+}
 
-  .input {
-    padding: $padding;
-  }
+table {
+  width        : 100%;
+  table-layout : fixed;
+}
+
+table td {
+  width         : 33.333%;
+  padding-right : $padding / 2;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+  white-space   : nowrap;
+  vertical-align: center;
+  padding: $padding 0px;
+}
+
+table th {
+  border-bottom: 1px solid #BBB;
+  padding: 0px;
 }

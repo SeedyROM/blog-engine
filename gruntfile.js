@@ -33,7 +33,15 @@ module.exports = function(grunt) {
         livereload: true,
       },
       express: {
-        files:  ['**/*.js', '!public/**/*.js'],
+        files:  [
+          'views/**/*',
+          'lib/**/*.js',
+          'config/**/*.js',
+          'app.js',
+          'gruntfile.js',
+          'package.json',
+          '!public/**/*',
+        ],
         tasks:  ['express:dev'],
         options: {
           spawn: false
@@ -44,7 +52,7 @@ module.exports = function(grunt) {
         tasks: ['sass', 'nunjucks']
       },
       public: {
-        files: ['public/html/**/*.*']
+        files: ['public/html/**/*']
       }
     }
   });

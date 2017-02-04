@@ -14,18 +14,19 @@
   </script>
 {% endblock %}
 {% block content %}
-<form action="/be-admin/posts/new" method="post" class="post-form">
+<form {% if not editing %} action="/be-admin/posts/new" {% endif %} method="post" class="post-form">
   <p class="hug">
     <label>Title:</label>
   </p>
   <p>
-    <input class="input" type="text" name="title" />
+    <input class="input stretch" type="text" name="title" value="{{ post.title }}" />
   </p>
-  <p>
-    <textarea id="editor" name="body"></textarea>
+  <p class="markdown">
+    <textarea id="editor" name="body">{{ post.body | safe}}</textarea>
   </p>
-  <p>
-    <input class="button" type="submit" value="Create Post" />
+  <p class="hug">
+    <input class="button" type="submit" \
+    value="{% if editing %}Submit Changes{% else %}Create Post{% endif %}" />
   </p>
 </form>
 {% endblock %}

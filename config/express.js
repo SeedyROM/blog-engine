@@ -31,6 +31,9 @@ nunjucks.env.addFilter('date', require('nunjucks-date-filter'))
 nunjucks.env.addFilter('stripMarkdown', (body) => {
   return require('remove-markdown')(body)
 })
+nunjucks.env.addFilter('parseMarkdown', (body) => {
+  return require('marked')(body)
+})
 
 // Listen shortcut
 const listen = () => {

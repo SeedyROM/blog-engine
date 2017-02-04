@@ -13,6 +13,11 @@ const useTemplates = true
 const templatesLocation = '/views/templates'
 const isDev = app.get('env') === 'development'
 
+// Setup livereload
+app.use(require('connect-livereload')({
+   port: 35729
+ }));
+
 // Content locations
 app.use('/js', express.static('public/js'))
 app.use('/stylesheets', express.static('public/stylesheets'))
@@ -30,7 +35,7 @@ nunjucks.env.addFilter('stripMarkdown', (body) => {
 // Listen shortcut
 const listen = () => {
   app.listen(sys.port, () => {
-    //console.log(`Server started at ${sys.hostname}:${sys.port}...`.info)
+    console.log(`Server started at ${sys.hostname}:${sys.port}...`.info)
   })
 }
 

@@ -144,6 +144,7 @@ a {
     display: inline-block;
     border-radius: 30px;
     padding-bottom: 10px;
+    border: none;
 
     @include transition(background 0.15s ease-in-out);
 
@@ -151,5 +152,9 @@ a {
       background: #E8E8E8;
       text-decoration: none;
     }
+  }
+
+  .input {
+    padding: $padding;
   }
 }

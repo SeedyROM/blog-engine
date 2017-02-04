@@ -29,6 +29,9 @@ module.exports = function(grunt) {
         }
     },
     watch: {
+      options: {
+        livereload: true,
+      },
       express: {
         files:  ['**/*.js', '!public/**/*.js'],
         tasks:  ['express:dev'],

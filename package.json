@@ -37,8 +37,10 @@
     "remove-markdown": "^0.1.0"
   },
   "devDependencies": {
+    "connect-livereload": "^0.6.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-express-server": "^0.5.3",
-    "grunt-nunjucks": "^0.1.4"
+    "grunt-nunjucks": "^0.1.4",
+    "livereload": "^0.6.0"
   }
 }

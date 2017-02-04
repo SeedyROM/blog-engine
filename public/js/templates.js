@@ -17,7 +17,7 @@ output += "\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1
 (parentTemplate ? function(e, c, f, r, cb) { cb(""); } : context.getBlock("scripts"))(env, context, frame, runtime, function(t_6,t_5) {
 if(t_6) { cb(t_6); return; }
 output += t_5;
-output += "\n</body>\n</html>\n";
+output += "\n  <script>\n    document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] +\n    ':35729/livereload.js?snipver=1\"></' + 'script>')\n  </script>\n</body>\n</html>\n";
 if(parentTemplate) {
 parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
 } else {

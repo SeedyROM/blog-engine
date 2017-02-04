@@ -14,18 +14,18 @@
   </script>
 {% endblock %}
 {% block content %}
-<form action="/be-admin/posts/new" method="post" name="newPost">
+<form action="/be-admin/posts/new" method="post" class="post-form">
   <p class="hug">
     <label>Title:</label>
   </p>
   <p>
-    <input type="text" name="title" />
+    <input class="input" type="text" name="title" />
   </p>
   <p>
     <textarea id="editor" name="body"></textarea>
   </p>
   <p>
-    <input type="submit" value="Create Post" />
+    <input class="button" type="submit" value="Create Post" />
   </p>
 </form>
 {% endblock %}
